@@ -1,0 +1,297 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+
+
+
+ 
+
+    <div class="Block" id = "MainBlock">
+
+
+        
+
+        <div class="Block" id="Information">
+            <div class="BlockName"> Information</div>
+
+
+            <div class="Block">
+
+                <div class="Block">
+                    <div class="inlineElemets">
+                        <div class="Block">
+                            <div>Progress:</div>
+                        </div>
+                    </div>
+                    <div class="inlineElemets">
+                        <div class="Block">
+                            <progress id='ProgressBar' value="0" min="0" max="100"> </progress>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="Block">
+                    <div class="inlineElemets">
+                        <div class="Block">
+                            <div class="inlineElemets">Status: </div> 
+                        </div>
+                    </div>
+                    <div class="inlineElemets">
+                        <div class="Block">
+                            <div class="inlineElemets" id="ProgressLabel">0%</div>
+                        </div>
+                    </div>
+                </div>
+               
+                
+        
+            </div>
+
+
+            <div class="Block" id ="World_block">            
+
+                <div class="BlockName" >World</div>
+
+                <div class="Block" id="Seed_block">
+
+
+                    <div class="inlineElemets">
+                        <div class="Block">
+                            <div>Seed:</div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="inlineElemets">
+                        <div class="Block" id="Seed_InputBlock">
+                            <input  type="text" name="SeedInputValue" id="SeedInput" value="00000" onkeypress='redraw("NoiseSizeRangeInput")'>
+                        </div>
+                    </div>
+
+                </div>
+  
+
+                <div class="Block">
+                    <div id="Size_block">
+
+                        <div class="inlineElemets">
+                            <div class="Block">
+                                <div id="SizeName_label">Size: </div>
+                            </div>
+                            
+                        </div>
+                        <div class="inlineElemets">
+                            <div class="Block">
+                                <div id="NoiseSizeText">0</div>
+                            </div>
+                        </div>
+                        <div class="Block">
+                            <input type="range" id="NoiseSizeRangeInput" min="1" max="2"  oninput='redraw("NoiseSizeRangeInput")' value="1">
+                        </div>
+                    </div>
+                </div>
+     
+
+                <div class="Block" id="Position_block">
+                    <div class="BlockName">Position:</div>
+
+                    <div class="Block">
+                        <div class="inlineElemets">
+                            <div class="Block">
+                                <div class="BlockName" id="Position_x_label" >X:</div>
+                                <div class="Block">
+                                    <input  type="range" id="Position_x_input" min="0" max="800"  oninput='redraw("NoiseSizeRangeInput")' value="0">
+                                </div>
+                                
+                            </div> 
+                        </div>
+     
+                        <div class="inlineElemets">
+                            <div class="Block">
+                                <div class="BlockName" id="Position_y_label">Y: </div>
+                                <div class="Block">
+                                    <input type="range" id="Position_y_input" min="0" max="800"  oninput='redraw("NoiseSizeRangeInput")' value="0">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+                </div>
+   
+
+            </div>
+            
+            <div class="Block" id="Parametrs">
+
+                <div class="BlockName" >Noise Parametrs:</div>
+                <div class="Block" id="Accuracy_Frequency_Block">
+
+
+                    <div class="inlineElemets">
+                        <div class="Block">
+                            <div class="inlineElemets" >
+                                <div>Accuracy:</div>
+                            </div>
+                            <div class="inlineElemets" >
+                                <div id="Accuracy_label">0</div>
+                            </div>
+                            
+                            <div class="Block">
+                                <input  type="range" id="Accuracy_input" min="1" max="200"  oninput='redraw("NoiseSizeRangeInput")' value="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inlineElemets">
+                        <div class="Block">
+                            
+                          
+                            
+                            <div class="inlineElemets" >
+                                <div>Frequency: </div>
+                            </div>
+                            <div class="inlineElemets" >
+                                <div id="Frequency_label">0</div>
+                            </div>
+                            
+                            <div class="Block">
+                                <input type="range" id="Frequency_input" min="1" max="100"  oninput='redraw("NoiseSizeRangeInput")' value="100">
+                            </div>
+                        </div>
+                            
+                     
+                    </div>
+
+
+                </div>
+        
+ 
+                <div class="Block">
+
+
+                    <div class="inlineElemets" >
+                        <div class="Block">
+                            Interpolations:
+                        </div>
+                    </div>
+                    
+                  
+
+                    
+                    <div class="inlineElemets" >
+                        <div class="Block">
+                            <select  name="select" id="InterpolationSecect" onchange='redraw("NoiseSizeRangeInput")'> <!--Supplement an id here instead of using 'name'-->
+                                <option value="ExpInterpolation">Exp </option>
+                                <option value="CubeInterpolation">Cube </option>
+                                <option value="LineInterpolation" selected>Line </option>
+                            </select>
+                        </div>
+                    </div>
+  
+                </div>
+
+                
+                <div class="Block">
+                    <div>Parametrs</div>
+
+                    <div class="Block">
+                        <div class="inlineElemets">
+                            <div class="Block">
+    
+                                <div>A:</div>
+    
+                            </div>
+                        </div>
+                        <div class="inlineElemets">
+                            <div class="Block">
+    
+                                <input class="Parametr_Input" type="text" id="Parametr_A" oninput='redraw("NoiseSizeRangeInput")'>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+              
+                    <div class="Block">
+                        <div class="inlineElemets">
+                            <div class="Block">
+    
+                                <div>B: </div>
+    
+                            </div>
+                        </div>
+                        <div class="inlineElemets">
+                            <div class="Block">
+    
+                                <input class="Parametr_Input" type="text" id="Parametr_B" oninput='redraw("NoiseSizeRangeInput")'>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="Block">
+                        <div class="inlineElemets">
+                            <div class="Block">
+    
+                                <div>C: </div>
+    
+                            </div>
+                        </div>
+                        <div class="inlineElemets">
+                            <div class="Block">
+    
+                                <input class="Parametr_Input" type="text" id="Parametr_C" oninput='redraw("NoiseSizeRangeInput")'>
+                                
+                            </div>
+                        </div>
+                    </div>
+    
+                          
+                        
+                        
+                    
+                </div>
+
+    
+
+     
+                
+
+                
+            </div>
+
+
+
+
+     
+
+
+            
+        </div>
+        
+
+            <div class="block" id="CanvasBlock">
+                <canvas id="Canvas"></canvas>
+            </div>
+            
+  
+        
+    </div>
+    
+
+
+    <script src="simplex-noise.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

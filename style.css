@@ -1,0 +1,60 @@
+
+.inlineElemets{
+    
+    display:inline-table;
+}
+
+
+
+#NoiseSizeRangeInput{
+    width: 100%;
+}
+
+
+#MainBlock{
+    display: inline-flex;
+
+    width: 100%;
+    background-color: gainsboro;
+
+}
+#Top_bar{
+    width: 100%;
+}
+#Information{
+    
+    width: 50%
+
+}
+
+#Seed_block{
+    
+}
+#Seed_InputBlock{
+   width:100%
+}
+#SeedInput{
+    width: 100%
+}
+
+.temp{
+    border-radius: 2px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    padding: auto;
+}
+.Block{
+    width: initial;
+
+    margin: 5px;
+    
+}
+
+
+
+#CanvasBlock{
+    width: 100%;
+}
+
+
